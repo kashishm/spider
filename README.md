@@ -28,7 +28,7 @@ go get github.com/kashishm/spider
 go run spider.go
 ```
 
-### For cross-platform compilation and Creating distributable
+### For cross-platform compilation and creating distributable
 
 ```
 go run build/make.go
