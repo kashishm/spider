@@ -236,6 +236,11 @@ var html = `
         <a href="http://getgauge.io" target="_blank" class="back"><img src="https://getgauge.io/assets/images/Gauge_logo.svg" draggable="false" /><span class="beta">BETA</span></a>
     </div>
     <div style="margin-right: 1%; margin-left: 1%;">
+        {{if not .}}
+        <div style="font-size: 30px; margin-top: 10%;">
+	    <strong>No running gauge process found.</strong>
+        </div>
+        {{else}}
         <div style="border: 1px solid #9a988f;padding-bottom: 0.5%;">
             <table>
                 <tr>
@@ -295,6 +300,7 @@ var html = `
             </div>
         </div>
         <div id="output" hidden></div>
+        {{end}}
     </div>
 </body>
 

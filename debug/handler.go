@@ -20,7 +20,7 @@ type handler func(http.ResponseWriter, *http.Request)
 func handle(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
-		err = t.Execute(w, infos)
+		err = t.Execute(w, getPInfos())
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write(toBytes(err.Error()))

@@ -11,14 +11,9 @@ import (
 	"log"
 )
 
-var infos []processInfo
 var t *template.Template
 
 func Start() {
-	infos = getPInfos()
-	if len(infos) < 1 {
-		log.Fatal("No running gauge process found.")
-	}
 	t, err = template.New("html").Parse(html)
 	if err != nil {
 		log.Fatalf("Cannot load HTML template. Error: %s", err.Error())
