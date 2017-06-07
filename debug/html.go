@@ -237,7 +237,7 @@ var html = `
     </div>
     <div style="margin-right: 1%; margin-left: 1%;">
         {{if not .}}
-        <div style="font-size: 30px; margin-top: 10%;">
+        <div style="font-size: 30px;">
 	    <strong>No running gauge process found.</strong>
         </div>
         {{else}}
