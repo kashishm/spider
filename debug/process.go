@@ -6,6 +6,8 @@ import (
 
 	"log"
 
+	"strconv"
+
 	m "github.com/getgauge/spider/gauge_messages"
 	"github.com/shirou/gopsutil/process"
 )
@@ -62,8 +64,10 @@ func getProcessInfo(processes []*process.Process) (infos []processInfo) {
 func getPort(p *process.Process) (string, error) {
 	args, err := p.CmdlineSlice()
 	if err == nil {
-		if len(args) > 3 {
-			return args[len(args)-1], nil
+		if len(args) > 2 {
+			if _, err := strconv.Atoi(args[2]); err == nil {
+				return args[2], nil
+			}
 		}
 	}
 	conns, err := p.Connections()
